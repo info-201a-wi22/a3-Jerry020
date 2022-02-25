@@ -1,0 +1,95 @@
+---
+title: "Patterns of inequality"
+author: "Jerry Zhang"
+date: "2/23/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+***Introduction***
+
+Problem domain：
+
+In recent years, the United States has always had the problem of patterns of inequality. One of the most obvious manifestations of these problems is the patterns of inequality in its prison system. A complex set of social and political structures, including the over-policing of individuals of color and the war on drugs have led to the disproportionate incarceration of people of color. In the data set mentioned in the report, the specific number of people summarized by time, place, and race is shown in the form of precise data, which is contained in number of people in jail, etc. By analyzing and understanding these data, we can better reveal patterns of inequality and I also analyze time, place and race in this report to get solid conclusions.
+
+
+
+Description of variables:
+
+I will choose the five variables of _"aapi_pop_15to64", "black_pop_15to64", "latinx_pop_15to64", "native_pop_15to64", "white_pop_15to64"_. The meaning of these five variables is the population of each race between the ages of 15-64, which is summarized according to the county. These variables were chosen because I wanted to find out what the proportion of the total population by race was(each year).
+In addition, I will also choose to analyze the two variables _"total_pop"_ and _"total_jail_pop"_, which mean the total number of people and the total number of peoples in jail respectively. Because I want to explore which year the total number of people is the largest, and judge whether the population in jail is related to the total number of people based on this data.
+Then, I will also choose the two variables _"white_jail_pop"_ and _"total_jail_pop"_, which means the number of white people in prison and the total number of peoples in jail respectively. Because I want to find out which states have the highest crime rates for white people.
+
+***Summary Information***
+
+By calculating the maximum number of people in jail in a single county, the number of people whose race is latinx is the largest in a county, followed by balck, white and native. In addition, in order to prevent the bias of the data, I calculated the number of people in jail between different races according to the time change through the over time chart, and found that the number of people in jail for whites is the largest, followed by blacks and Latinos. To further compare the three races, I further compared the white races with the highest number of people in the over time chart. I listed five states with the highest white crime rates and found that their ratio of incarceration to the state total is about between 0.48% to 0.7%, and finally summarize the comparison of each county in Washington in chart3.
+
+***Chart 1***
+
+
+```{r, warning=FALSE, message=FALSE,echo=FALSE}
+source("Chart-1(over time).R")
+each_race_pop_each_year_plot
+```
+
+***reason and pattern***
+
+reason:
+
+In this chart, the reason for doing this chart is because I want to analyze and compare the number of incarcerations of various races over time. In this way, it becomes apparent which race has the largest number of people in jail. 
+
+pattern:
+
+In this chart, overall I found that whites have the highest incarceration numbers, followed by blacks and latinx, with little fluctuation in data between other races.
+
+
+
+
+***Chart 2***
+
+
+```{r, warning=FALSE, message=FALSE,echo=FALSE}
+source("chart-2(two variable).R")
+top5_white_highest_rate_plot
+```
+
+
+***reason and pattern***
+
+reason:
+
+In this chart, the reason for this chart is that after the previous chart analyzed the number of white prisoners with the largest number of prisoners as a whole, I wanted to further explore which five states have the highest white prison rates, and then I also calculated The proportion of the total number of people in jail to the total number of people, and finally I will compare the two proportions to analyze and draw conclusions.
+
+pattern:
+
+The five states I found with the highest rates of white incarceration were Georgia, Kentucky, Los Angeles, New Mexico, and Tennessee. The proportion of white people in jail in these five states is about 0.48%-0.7% (with Kentucky having the highest proportion), which is lower than the total people in jail proportion of about 0.57%-0.96% (with Los Angeles having the highest proportion).
+
+
+
+
+***Chart 3***
+
+
+```{r, warning=FALSE, message=FALSE,echo=FALSE}
+source("chart-3(geo).R")
+US_map
+```
+
+***reason and pattern***
+
+reason:
+
+In this chart, the reason for this chart is that i want to explore the ratio of black incarceration to white incarceration by county in the state of Washington, to find out what is the county with the highest ratio and the county with the lowest ratio, and get the ratio data. Thus, the situation of these two groups can be analyzed from the aspect of race.
+
+pattern:
+
+In the graph after filtering the data, I found that the county with the highest ratio of black incarceration to white incarceration is lincoln (ratio is 15.9), and the county with the lowest ratio is pacific (ratio is 0.48).
+
+
+
+
+
